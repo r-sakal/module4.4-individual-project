@@ -7,13 +7,13 @@
   font-family: "Roboto", sans-serif;
 };
 
-.btn{
+.btn:hover {
   cursor: pointer;
-}
+};
 
 div {
   display: block;
-}
+};
 
 .container__results {
   margin: 0 auto;
@@ -23,31 +23,31 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+};
 
 .row__search--results {
   display: block;
-}
+};
 
 .movie__list {
 width: auto;
 display: flex;
 flex-wrap: wrap;
-}
+};
 
 .movie__card {
   box-shadow: 0 4px 8px 0;
   margin: 10px;
   border-radius: 10px;
-}
+};
 
 .box__art {
   padding: 50px 50px 10px 50px;
-}
+};
 
 .card--container {
   padding: 4px 12px;
-}
+};
 
 .movie__title {
   display: block;
@@ -56,19 +56,19 @@ flex-wrap: wrap;
   margin-block-start: 1em;
   margin-block-end: 1em;
   text-align: center;
-}
+};
 
 p {
   font-size: 14px;
-}
+};
 
 .release__date {
   font-weight: 500;
   font-style: italic;
   text-align: right;
   margin-right: 1.5em;
-}
+};
 
 .imdb__page {
   margin: 1.5em;
-}
+};
