@@ -76,7 +76,7 @@ display: block;
 
 .container__results {
   margin: 0 auto;
-  width: (100% / 3);
+  width: 100%;
   max-width: 1200px;
   display: flex;
   justify-content: center;
@@ -93,7 +93,7 @@ flex-wrap: wrap;
 }
 
 .movie__card {
-  width: 33.33%;
+  max-width: (100% / 3);
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgb(235, 207, 170);
   margin: 10px;
