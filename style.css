@@ -76,7 +76,7 @@ display: block;
 
 .container__results {
   margin: 0 auto;
-  width: 100%;
+  width: (100% / 3);
   max-width: 1200px;
   display: flex;
   justify-content: center;
@@ -93,6 +93,8 @@ flex-wrap: wrap;
 }
 
 .movie__card {
+  width: 33.33%;
+  padding: 10px;
   box-shadow: 0 4px 8px 0 rgb(235, 207, 170);
   margin: 10px;
   border: 1px solid rgb(235, 207, 170);
@@ -101,7 +103,8 @@ flex-wrap: wrap;
 }
 
 .box__art {
-  padding: 25px 50px 10px 50px;
+  display: block;
+  margin: 10px auto;
 }
 
 .card--container {
