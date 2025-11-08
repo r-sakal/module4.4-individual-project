@@ -7,7 +7,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-.btn:hover {
+#btn:hover {
   cursor: pointer;
 }
 
@@ -48,18 +48,19 @@ input {
   border-radius: 20px;
 }
 
-.btn, .search__area {
+#btn, #search__area {
   background-color: rgba(82, 11, 11, 0.677);
   border: 2px solid rgb(235, 207, 170);
 }
 
-.btn {
+#btn {
 margin-left: 10px;
 padding: 8px;
 color: antiquewhite;
 }
 
-.search__area {
+#search__area {
+  color: antiquewhite;
   padding: 0 8px;
 }
 
@@ -112,7 +113,7 @@ display: block;
   padding: 4px 12px;
 }
 
-.movie__title, .release__date, .imdb__page {
+.movie__title, .release__date, .imdb__page, .rotten__tomatoes {
   margin-bottom: 10px;
   color: antiquewhite;
   
@@ -136,7 +137,7 @@ p {
   margin-right: 16px;;
 }
 
-.imdb__page {
+.imdb__page, .rotten__tomatoes {
   text-align: left;
   margin-left: 16px;
 }

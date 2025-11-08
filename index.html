@@ -6,7 +6,6 @@
     <title>Movies</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/1bc2e2affb.js" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
 </head>
 <body>
     <section>
@@ -17,59 +16,21 @@
                 <div>
                     <h1>Looking for a good movie to watch?</h1> 
                     <div class="search__bar">
-                        <input type="text" class="search__area" placeholder="Part of a title or series">
-                        <input type="button" class="btn" value="Look it up!">
+                        <input type="text" id="search__area" placeholder="Part of a title or series">
+                        <input type="button" id="btn" value="Look it up!">
                     </div>
                 </div>
-                <div class="container__results">
+                <div class="container__results" style="display: none">
                     <div class="row__search--results">
                         <div class="movie__list">
-                            <div class="movie__card movie__1">
+                            <div class="movie__card">
                                 <div class="movie__card--container">
                                     <img class="box__art" src="https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg" alt="box art">
                                     <h3 class="movie__title">Harry Potter and the Half-Blood Prince</h3>
                                     <p class="release__date">released 2009</p>
-                                    <p class="imdb__page">Link to IMDB page maybe pull ratings using another api?</p>
-                                </div>
-                            </div>
-                            <div class="movie__card movie__2">
-                                <div class="card__container">
-                                    <img class="box__art" src="https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg" alt="box art">
-                                    <h3 class="movie__title">Harry Potter and the Half-Blood Prince</h3>
-                                    <p class="release__date">released 2009</p>
-                                    <p class="imdb__page">Link to IMDB page maybe pull ratings using another api?</p>
-                                </div>
-                            </div>
-                            <div class="movie__card movie__3">
-                                <div class="card__container">
-                                    <img class="box__art" src="https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg" alt="box art">
-                                    <h3 class="movie__title">Harry Potter and the Half-Blood Prince</h3>
-                                    <p class="release__date">released 2009</p>
-                                    <p class="imdb__page">Link to IMDB page maybe pull ratings using another api?</p>
-                                </div>
-                            </div>
-                            <div class="movie__card movie__4">
-                                <div class="card__container">
-                                    <img class="box__art" src="https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg" alt="box art">
-                                    <h3 class="movie__title">Harry Potter and the Half-Blood Prince</h3>
-                                    <p class="release__date">released 2009</p>
-                                    <p class="imdb__page">Link to IMDB page maybe pull ratings using another api?</p>
-                                </div>
-                            </div>
-                            <div class="movie__card movie__5">
-                                <div class="card__container">
-                                    <img class="box__art" src="https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg" alt="box art">
-                                    <h3 class="movie__title">Harry Potter and the Half-Blood Prince</h3>
-                                    <p class="release__date">released 2009</p>
-                                    <p class="imdb__page">Link to IMDB page maybe pull ratings using another api?</p>
-                                </div>
-                            </div>
-                            <div class="movie__card movie__6">
-                                <div class="card__container">
-                                    <img class="box__art" src="https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg" alt="box art">
-                                    <h3 class="movie__title">Harry Potter and the Half-Blood Prince</h3>
-                                    <p class="release__date">released 2009</p>
-                                    <p class="imdb__page">Link to IMDB page maybe pull ratings using another api?</p>
+                                    <p class="imdb__page">IMDB rating: </p>
+                                    <p class="rotten__tomatoes">Rotten tomatoes:</p>
+
                                 </div>
                             </div>
                         </div>    
@@ -78,5 +39,6 @@
             </header>
         </section>
     </main>
+    <script src="index.js"></script>
 </body>
 </html>
