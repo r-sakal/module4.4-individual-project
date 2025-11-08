@@ -22,7 +22,7 @@ h1, .search__bar {
   justify-content: center;
 }
 
-section {
+body {
   background-image: url('./assets/curtain.jpg');
   background-size: cover;
 }
@@ -32,6 +32,8 @@ section {
   height: auto;
   opacity: .30;
 }
+
+
 
 /* 
 SEARCH FOR A MOVIE
