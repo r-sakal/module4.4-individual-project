@@ -9,6 +9,10 @@
 
 #btn:hover {
   cursor: pointer;
+  color: rgb(82, 11, 11);
+  background-color: antiquewhite;
+  border: 2px solid rgb(82, 11, 11);
+  
 }
 
 h1 {

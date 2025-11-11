@@ -3,11 +3,13 @@
 //put the search bar results into the api search by makig the api dynamic
 
 
+
 async function main() {
     document.getElementById('btn')
     .addEventListener('click', async() => {
         const query = document.getElementById('search__area').value;
         const resultsContainer = document.getElementsByClassName('container__results')[0]
+       
         if (query) {
             resultsContainer.style.display = 'block';
         }
@@ -23,7 +25,9 @@ async function main() {
             const movieListEl = document.querySelector('.movie__list');
             console.log(moviesData)
 
-            const movieDetailsPromises = moviesData.Search.map(movie => fetchMovieDetails(movie.imdbID, apiKey));
+            //filter out games from showing in the results
+            const filteredMovies = moviesData.Search.filter(movie => movie.Type !== 'game');
+            const movieDetailsPromises = filteredMovies.map(movie => fetchMovieDetails(movie.imdbID, apiKey));
             const movieDetails = await Promise.all(movieDetailsPromises);
 
             movieListEl.innerHTML = movieDetails.map(movie => movieHTML(movie)).join("")
@@ -40,6 +44,8 @@ async function main() {
         return await response.json();
     }
 
+//add the ratings for IMDB and Rotten Tomatoes
+    
     function movieHTML(movie) {
         const imdbRating = movie.Ratings.find(rating => rating.Source === "Internet Movie Database")?.Value || "N/A";
         const rottenTomatoesRating = movie.Ratings.find(rating => rating.Source === "Rotten Tomatoes")?.Value || "N/A";

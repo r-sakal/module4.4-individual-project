@@ -1,0 +1,1 @@
+// create skeleton loading page for when the fetching data is taking place
