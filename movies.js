@@ -1,10 +1,11 @@
 //API FOR MOVIES by title search: https://www.omdbapi.com/?apikey=7d0b778a&s=harry+potter
 //API For more in depth info search: https://www.omdbapi.com/?apikey=7d0b778a&i=tt0417741 
 //put the search bar results into the api search by makig the api dynamic
+//create skeleton loading page for when the fetching data is taking place
 
 
 
-async function main() {
+async function movies() {
     document.getElementById('btn')
     .addEventListener('click', async() => {
         const query = document.getElementById('search__area').value;
@@ -26,6 +27,7 @@ async function main() {
             console.log(moviesData)
 
             //filter out games from showing in the results
+
             const filteredMovies = moviesData.Search.filter(movie => movie.Type !== 'game');
             const movieDetailsPromises = filteredMovies.map(movie => fetchMovieDetails(movie.imdbID, apiKey));
             const movieDetails = await Promise.all(movieDetailsPromises);
@@ -61,7 +63,7 @@ async function main() {
             </div>`;
     }
 
-main();
+movies();
 
 
 
