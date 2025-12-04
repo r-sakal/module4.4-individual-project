@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="filters.js">
     <script src="https://kit.fontawesome.com/1bc2e2affb.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -21,9 +22,18 @@
                     </div>
                 </div>
                 <div class="results__loading">
-                    <i class="fa-solid fa-spinner books__loading--spinner"></i>
+                    <i class="fa-solid fa-spinner results__loading--spinner"></i>
                 </div>
                 <div class="container__results" style="display: none">
+                    <select id="filter" onchange="filterMovies(event)">
+                        <option value="" disabled selected>Sort</option>
+                        <option value="IMDB_High_To_Low"> IMDB Rating, High to Low</option>
+                        <option value="IMDB_Low_To_High"> IMDB Rating, Low to High</option>
+                        <option value="RT_High_To_Low"> Rotten Tomatoes Score, High to Low</option>
+                        <option value="RT_Low_To_High"> Rotten Tomatoes Score, Low to High</option>
+                        <option value="Release_Newest"> Release Date, Newest</option>
+                        <option value="Release_Oldest"> Release Date, Oldest</option>
+                    </select>
                     <div class="row__search--results">
                         <div class="movie__list">
                             <div class="movie__card">

@@ -47,22 +47,28 @@ SEARCH FOR A MOVIE
   margin: 16px;
 }
 
-input {
+#filter, input {
   display: flex;
   justify-content: space-around;
   font-size: 20px;
   border-radius: 20px;
 }
 
-#btn, #search__area {
+#filter, #btn, #search__area {
   background-color: rgba(82, 11, 11, 0.677);
   border: 2px solid rgb(235, 207, 170);
 }
 
-#btn {
+#filter, #btn {
 margin-left: 10px;
 padding: 8px;
 color: antiquewhite;
+}
+
+#filter {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 12px;
 }
 
 #search__area {
@@ -146,4 +152,38 @@ p {
 .imdb__page, .rotten__tomatoes {
   text-align: left;
   margin-left: 16px;
+}
+
+/*.  
+    Skeleton Loading State 
+    */
+
+.results__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  font-size: 60px;
+  color: antiquewhite;
+}
+
+.results__loading--spinner {
+  display: none !important;
+}
+
+.results__loading .results__loading--spinner {
+  display: block;
+}
+
+.fa-spinner {
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
