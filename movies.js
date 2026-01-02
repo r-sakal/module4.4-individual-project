@@ -5,7 +5,7 @@
 var currentMovies = [];
 
 function renderMovies(list) {
-    const moviesLiestEl = document.querySelector('.movie__list');
+    const movieListEl = document.querySelector('.movie__list');
     movieListEl.innerHTML = list.map(movie => movieHTML(movie)).join("");
 }
 
