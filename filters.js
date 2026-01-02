@@ -10,14 +10,14 @@
 
 // Keep and render state-- store the movies in currentMovies then use renderMovies(list) to update .movie__list
 
-function getIMDB(m) {
+function getImdb(m) {
     const v = m.Ratings?.find(r => r.Source === "Internet Movie Database")?.Value || "0";
     const num = parseFloat(String(v).split("/")[0]);
     return isNaN(num) ? 0 : num;
 }
 
 function getRT(m) {
-    const v = m.Ratings?.find(r => r.Source === "Rotten Tomatoes")?.Value || "0";
+    const v = m.Ratings?.find(r => r.Source === "Rotten Tomatoes")?.Value || "0%";
     const num = parseInt(String(v).replace("%", ""), 10);
     return isNaN(num) ? 0 : num;
 }
@@ -32,6 +32,7 @@ function getYear(m) {
 //filter function
 
 function filterMovies(event) {
+    const value = event.target.value;
     const list = Array.isArray(window.currentMovies) ? [...window.currentMovies] : [];
 
     //filter options
@@ -39,10 +40,10 @@ function filterMovies(event) {
     switch (value) {
         //IMDB
         case 'IMDB_High_To_Low':
-            list.sort((a, b) => getIMDB(b) - getIMDB(a));
+            list.sort((a, b) => getImdb(b) - getImdb(a));
             break;
         case 'IMDB_Low_To_High':
-            list.sort((a, b) => getIMDB(a) - getIMDB(b));
+            list.sort((a, b) => getImdb(a) - getImdb(b));
             break;
         
         //Rotten Tomatoes
