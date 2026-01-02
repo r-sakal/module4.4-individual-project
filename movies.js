@@ -5,7 +5,7 @@
 var currentMovies = [];
 
 function renderMovies(list) {
-    const moviesLiestEl = documentquerySelector('.movie__list');
+    const moviesLiestEl = document.querySelector('.movie__list');
     movieListEl.innerHTML = list.map(movie => movieHTML(movie)).join("");
 }
 
@@ -37,7 +37,10 @@ async function movies() {
             const movieDetailsPromises = filteredMovies.map(movie => fetchMovieDetails(movie.imdbID, apiKey));
             const movieDetails = await Promise.all(movieDetailsPromises);
 
-            movieListEl.innerHTML = movieDetails.map(movie => movieHTML(movie)).join("")
+            currentMovies = movieDetails;
+            window.currentMovies = currentMovies;
+            window.renderMovies =renderMovies;
+            renderMovies(currentMovies);
         }
         catch(error) {
             console.error('Error fetching movies:', error)
