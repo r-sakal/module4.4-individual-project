@@ -2,7 +2,12 @@
 //API For more in depth info search: https://www.omdbapi.com/?apikey=7d0b778a&i=tt0417741 
 //put the search bar results into the api search by makig the api dynamic
 //create skeleton loading page for when the fetching data is taking place
+var currentMovies = [];
 
+function renderMovies(list) {
+    const moviesLiestEl = documentquerySelector('.movie__list');
+    movieListEl.innerHTML = list.map(movie => movieHTML(movie)).join("");
+}
 
 
 async function movies() {

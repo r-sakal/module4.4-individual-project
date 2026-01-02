@@ -6,23 +6,13 @@
 //      -IMDB best to worst
 //      -Rotten Tomatoes best to worst
 
-function filter() {
+// parse the ratings from imdb rotten tomatoes and the release date to make them sortable as numbers when defining filterMovies(event)
 
-       if (filter === 'IMDB_High_To_Low') {
-           movies.sort((a, b) => b.imdbRating - a.imdbRating)
-        }
-        else if (filter === 'IMDB_Low_To_High') {
-            movies.sort((a, b) => a.imdbRating - b.imdbRating)
-        }
-        else if (filter === "RT_High_To_Low") {
-            movies.sort((a, b) => b.rottenTomatoesRating - a.rottenTomatoesRating)
-        }
-        else if (filter === "RT_Low_To_High") {
-            movies.sort((a, b) => a.rottenTomatoesRating - b.rottenTomatoesRating)
-        }
-        else if (filter === "Release_Newest") {
-            movies.sort((a, b) => a.release - b.release)
-        }
-        else if (filter === "Release_Oldest") {
-            movies.sort((a, b) => b.release - a.release)
-        }
+// Keep and render state-- store the movies in currentMovies then use renderMovies(list) to update .movie__list
+
+function getIMDB(m) {
+    const v = m.Ratings?.find(r => r.Source === "Internet Movie Database")?.value || "0";
+    const num = parseFloat(String(v).split("/")[0]);
+    return isNaN(num) ? 0 : num;
+}
+
