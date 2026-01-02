@@ -14,13 +14,18 @@ async function movies() {
     document.getElementById('btn')
     .addEventListener('click', async() => {
         const query = document.getElementById('search__area').value;
-        const resultsContainer = document.getElementsByClassName('container__results')[0]
+        const resultsContainer = document.getElementsByClassName('container__results')[0];
+        //loading spinner
+        const loadingSpinner = document.querySelector('.results__loading');
        
         if (query) {
             resultsContainer.style.display = 'block';
+            loadingSpinner.style.display = 'block';
         }
         else {
             resultsContainer.style.display = 'none';
+            loadingSpinner.style.display = 'none';
+            return;
         }
         const apiKey = '7d0b778a';
         const url =`https://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(query)}`;
@@ -44,6 +49,11 @@ async function movies() {
         }
         catch(error) {
             console.error('Error fetching movies:', error)
+        }
+        finally {
+            setTimeout(() => {
+                loadingSpinner.style.display = 'none';
+            }, 2000)
         }
     });
     }

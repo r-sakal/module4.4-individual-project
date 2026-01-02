@@ -172,7 +172,8 @@ p {
 }
 
 .results__loading .results__loading--spinner {
-  display: block;
+  display: block !important;
+
 }
 
 .fa-spinner {

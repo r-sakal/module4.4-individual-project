@@ -21,9 +21,6 @@
                         <input type="button" id="btn" value="Look it up!">
                     </div>
                 </div>
-                <div class="results__loading">
-                    <i class="fa-solid fa-spinner results__loading--spinner"></i>
-                </div>
                 <div class="container__results" style="display: none">
                     <select id="filter" onchange="filterMovies(event)">
                         <option value="" disabled selected>Sort</option>
@@ -34,6 +31,9 @@
                         <option value="Release_Newest"> Release Date, Newest</option>
                         <option value="Release_Oldest"> Release Date, Oldest</option>
                     </select>
+                     <div class="results__loading" style="display: none;">
+                    <i class="fa-solid fa-spinner results__loading--spinner"></i>
+                </div>
                     <div class="row__search--results">
                         <div class="movie__list">
                             <div class="movie__card">
