@@ -45,8 +45,12 @@ async function movies() {
         currentMovies = movieDetails;
         window.currentMovies = currentMovies;
         window.renderMovies =renderMovies;
-        renderMovies(currentMovies);
-        loadingSpinner.style.display = 'none';
+        setTimeout(() => {
+            
+            loadingSpinner.style.display = 'none';
+            renderMovies(currentMovies);
+            
+        },2000);
     }
     catch(error) {
         console.error('Error fetching movies:', error)
