@@ -30,32 +30,28 @@ async function movies() {
         const apiKey = '7d0b778a';
         const url =`https://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(query)}`;
 
-        try{
-            const moviesResponse = await fetch(url);
-            const moviesData = await moviesResponse.json();
-            const movieListEl = document.querySelector('.movie__list');
-            console.log(moviesData)
+    try{
+        const moviesResponse = await fetch(url);
+        const moviesData = await moviesResponse.json();
+        const movieListEl = document.querySelector('.movie__list');
+        console.log(moviesData)
+        
+        //filter out games from showing in the results
+        
+        const filteredMovies = (moviesData.Search ||  []).filter(movie => movie.Type !== 'game');
+        const movieDetailsPromises = filteredMovies.map(movie => fetchMovieDetails(movie.imdbID, apiKey));
+        const movieDetails = await Promise.all(movieDetailsPromises);
+        
+        currentMovies = movieDetails;
+        window.currentMovies = currentMovies;
+        window.renderMovies =renderMovies;
+        renderMovies(currentMovies);
+    }
+    catch(error) {
+        console.error('Error fetching movies:', error)
+    }
+});
 
-            //filter out games from showing in the results
-
-            const filteredMovies = moviesData.Search.filter(movie => movie.Type !== 'game');
-            const movieDetailsPromises = filteredMovies.map(movie => fetchMovieDetails(movie.imdbID, apiKey));
-            const movieDetails = await Promise.all(movieDetailsPromises);
-
-            currentMovies = movieDetails;
-            window.currentMovies = currentMovies;
-            window.renderMovies =renderMovies;
-            renderMovies(currentMovies);
-        }
-        catch(error) {
-            console.error('Error fetching movies:', error)
-        }
-        finally {
-            setTimeout(() => {
-                loadingSpinner.style.display = 'none';
-            }, 2000)
-        }
-    });
     }
 
     async function fetchMovieDetails(imdbID, apiKey) {
